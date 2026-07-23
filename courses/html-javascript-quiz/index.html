@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>공개 API로 만드는 Java 퀴즈</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
+</head>
+<body>
+<main class="page-shell">
+    <section class="quiz-board" aria-labelledby="page-title">
+        <header class="board-header">
+            <p class="eyebrow">HTML · JAVASCRIPT · API</p>
+            <h1 id="page-title">Java 기초 퀴즈</h1>
+            <p>공개 API에서 문제를 받고 답을 보내 정답과 해설을 확인합니다.</p>
+        </header>
+
+        <aside class="scope-note">
+            <strong>학습용 API 화면입니다</strong>
+            <span>정답은 서버가 확인하지만 점수는 현재 브라우저에만 있습니다. 새로고침하면 0점부터 다시 시작합니다.</span>
+        </aside>
+
+        <section class="question-section" aria-labelledby="question-title">
+            <div class="question-heading">
+                <div>
+                    <p class="section-label">PUBLIC API QUESTION</p>
+                    <h2 id="question-title">문제를 불러오는 중...</h2>
+                </div>
+                <button id="reload-button" class="secondary-button" type="button">다음 문제</button>
+            </div>
+            <p id="question-message" class="question-message" aria-live="polite">공개 API에 요청하는 중...</p>
+            <ol id="choice-list" class="choice-list" aria-label="문제 선택지"></ol>
+        </section>
+
+        <form id="quiz-form" class="quiz-form" novalidate>
+            <label for="answer-input">정답 번호</label>
+            <div class="answer-input-row">
+                <input id="answer-input" name="choiceId" type="number" min="1" max="4" inputmode="numeric" placeholder="1부터 4까지 입력">
+                <button id="answer-button" type="submit">정답 보내기</button>
+            </div>
+            <p id="answer-message" class="answer-message" aria-live="polite"></p>
+            <p id="score-message" class="score-message">현재 점수: 0 / 0</p>
+        </form>
+    </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,47 @@
+name: Course source check
+
+on:
+  push:
+    paths:
+      - 'courses/java-foundations-cafe/**'
+      - 'courses/java-oop-quiz/**'
+      - 'courses/html-javascript-quiz/**'
+      - '.github/workflows/course-sources.yml'
+  pull_request:
+    paths:
+      - 'courses/java-foundations-cafe/**'
+      - 'courses/java-oop-quiz/**'
+      - 'courses/html-javascript-quiz/**'
+      - '.github/workflows/course-sources.yml'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 저장소 받기
+        uses: actions/checkout@v4
+
+      - name: Java 17 준비
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Java 기초 최종 소스 컴파일
+        run: |
+          mkdir -p /tmp/java-foundations-classes
+          javac -encoding UTF-8 -d /tmp/java-foundations-classes courses/java-foundations-cafe/*.java
+
+      - name: Java 객체지향 퀴즈 최종 소스 컴파일
+        run: |
+          mkdir -p /tmp/java-oop-quiz-classes
+          javac -encoding UTF-8 -d /tmp/java-oop-quiz-classes courses/java-oop-quiz/*.java
+
+      - name: Node.js 준비
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: HTML·JavaScript 최종 소스 문법 확인
+        run: node --check courses/html-javascript-quiz/app.js
