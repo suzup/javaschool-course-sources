@@ -11,8 +11,8 @@ import org.javaschool.quiz.question.QuestionRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
@@ -95,7 +95,7 @@ class QuizApiTest {
                         .content("""
                                 {"questionId":%d,"choiceId":5}
                                 """.formatted(question.getId())))
-                .andExpect(status().isUnprocessableEntity())
+                .andExpect(status().isUnprocessableContent())
                 .andExpect(jsonPath("$.error.code").value("INVALID_ANSWER"));
 
         mockMvc.perform(post("/api/quiz/answers")
@@ -111,7 +111,7 @@ class QuizApiTest {
                         .content("""
                                 {"questionId":"first","choiceId":1}
                                 """))
-                .andExpect(status().isUnprocessableEntity())
+                .andExpect(status().isUnprocessableContent())
                 .andExpect(jsonPath("$.error.code").value("INVALID_ANSWER"));
     }
 

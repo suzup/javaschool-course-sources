@@ -1,8 +1,8 @@
 # Spring Boot Java 퀴즈 완성 프로그램
 
-HTML·JavaScript 과정에서 사용한 퀴즈 API를 Java 17, Spring Boot 3.5.16과 MySQL 8.0.46으로 직접 구현한 강의 작업 원본입니다.
+HTML·JavaScript 과정에서 사용한 퀴즈 API를 Java 17, Spring Boot 4.0.7과 MySQL 8.0.46으로 직접 구현한 강의 작업 원본입니다. Gradle은 Spring Initializr가 생성한 Wrapper 9.5.1을 사용하므로 따로 설치하지 않습니다.
 
-처음 환경을 준비한다면 [Windows 11·VS Code·Java 17·MySQL 설치 읽을거리](../../../content/posts/readings/ko/spring-boot-windows-vscode-mysql-setup.md)를 먼저 확인합니다.
+처음 환경을 준비한다면 JavaSchool 과정에 연결된 **Windows 11·VS Code·Java 17·MySQL 설치 읽을거리**를 먼저 확인합니다.
 
 ## 준비
 

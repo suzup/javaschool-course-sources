@@ -18,13 +18,13 @@ public class ApiExceptionHandler {
                 .findFirst()
                 .map(error -> error.getDefaultMessage())
                 .orElse("questionId와 choiceId를 확인해 주세요.");
-        return ResponseEntity.unprocessableEntity()
+        return ResponseEntity.status(HttpStatus.UNPROCESSABLE_CONTENT)
                 .body(error("INVALID_ANSWER", message));
     }
 
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity<ApiErrorResponse> handleUnreadableJson(HttpMessageNotReadableException exception) {
-        return ResponseEntity.unprocessableEntity()
+        return ResponseEntity.status(HttpStatus.UNPROCESSABLE_CONTENT)
                 .body(error("INVALID_ANSWER", "questionId와 choiceId를 숫자로 보내 주세요."));
     }
 
