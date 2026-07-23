@@ -1,0 +1,57 @@
+services:
+  mysql:
+    image: mysql:8.0.46
+    environment:
+      MYSQL_ROOT_PASSWORD: local_root_password
+      MYSQL_DATABASE: java_quiz
+      MYSQL_USER: quiz_app
+      MYSQL_PASSWORD: quiz_password
+      TZ: Asia/Seoul
+    ports:
+      - "3307:3306"
+    volumes:
+      - quiz_mysql_data:/var/lib/mysql
+      - ./database/docker-init.sql:/docker-entrypoint-initdb.d/01-quiz-test.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -plocal_root_password --silent"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+
+  test:
+    image: eclipse-temurin:17-jdk
+    working_dir: /workspace
+    command: ./gradlew test --no-daemon
+    environment:
+      QUIZ_TEST_DB_URL: jdbc:mysql://mysql:3306/java_quiz_test
+      QUIZ_TEST_DB_USERNAME: quiz_app
+      QUIZ_TEST_DB_PASSWORD: quiz_password
+      TZ: Asia/Seoul
+    volumes:
+      - .:/workspace
+      - quiz_gradle_cache:/root/.gradle
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  app:
+    image: eclipse-temurin:17-jdk
+    working_dir: /workspace
+    command: ./gradlew bootRun --no-daemon
+    environment:
+      QUIZ_DB_URL: jdbc:mysql://mysql:3306/java_quiz
+      QUIZ_DB_USERNAME: quiz_app
+      QUIZ_DB_PASSWORD: quiz_password
+      TZ: Asia/Seoul
+    volumes:
+      - .:/workspace
+      - quiz_gradle_cache:/root/.gradle
+    ports:
+      - "8080:8080"
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+volumes:
+  quiz_mysql_data:
+  quiz_gradle_cache:

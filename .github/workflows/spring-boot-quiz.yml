@@ -1,0 +1,54 @@
+name: Spring Boot quiz test
+
+on:
+  push:
+    paths:
+      - 'courses/spring-boot-quiz/**'
+      - '.github/workflows/spring-boot-quiz.yml'
+  pull_request:
+    paths:
+      - 'courses/spring-boot-quiz/**'
+      - '.github/workflows/spring-boot-quiz.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: java_quiz_test
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -proot"
+          --health-interval=5s
+          --health-timeout=5s
+          --health-retries=20
+
+    defaults:
+      run:
+        working-directory: courses/spring-boot-quiz
+
+    env:
+      QUIZ_TEST_DB_URL: jdbc:mysql://127.0.0.1:3306/java_quiz_test
+      QUIZ_TEST_DB_USERNAME: root
+      QUIZ_TEST_DB_PASSWORD: root
+
+    steps:
+      - name: 저장소 받기
+        uses: actions/checkout@v4
+
+      - name: Java 17 준비
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Gradle 캐시 준비
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: 테스트 실행
+        run: ./gradlew test --no-daemon
