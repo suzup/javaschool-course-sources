@@ -12,6 +12,11 @@ JavaSchool 학습 과정에서 사용하는 실행 소스를 모아 둔 저장�
 | 직접 만들고 플레이하는 Java 객체지향 퀴즈 | [`courses/java-oop-quiz`](courses/java-oop-quiz) | Java 17 |
 | Spring Boot 전에 끝내는 HTML·JavaScript | [`courses/html-javascript-quiz`](courses/html-javascript-quiz) | Chrome 또는 Edge |
 | Java 퀴즈 서버를 직접 만드는 Spring Boot 입문 | [`courses/spring-boot-quiz`](courses/spring-boot-quiz) | Java 17, Spring Boot 4.0.7, MySQL 8.0 |
+| 퀴즈 UI를 컴포넌트로 만드는 React 기초 | [`courses/react-quiz`](courses/react-quiz) | Node.js 20+, Vite |
+| 반응형 UI 만들기 — Vue.js 기초 | [`courses/vue-quiz`](courses/vue-quiz) | Node.js 20+, Vite |
+| SSR과 풀스택 앱 — Next.js 실전 | [`courses/nextjs-todo`](courses/nextjs-todo) | Node.js 20+, SQLite |
+| Express로 REST API 만들기 — Node.js 백엔드 입문 | [`courses/nodejs-quiz-api`](courses/nodejs-quiz-api) | Node.js 20+, SQLite |
+| 타입으로 버그 막기 — TypeScript 입문 | [`courses/typescript-intro`](courses/typescript-intro) | Node.js 20+ |
 
 ## 소스 사용 방법
 
