@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -5,20 +6,27 @@ public class OrderProgram {
     // Main이 프로그램을 시작하면 이 주문 흐름이 움직입니다.
     static void run() {
         Scanner scanner = new Scanner(System.in);
+
+        ArrayList<Menu> menus = new ArrayList<>();
         Menu americano = new Menu("아메리카노", 3000);
         Menu cafeLatte = new Menu("카페라떼", 4000);
         cafeLatte.markSoldOut();
         Menu vanillaLatte = new Menu("바닐라라떼", 4500);
+
+        menus.add(americano);
+        menus.add(cafeLatte);
+        menus.add(vanillaLatte);
+
         Cart cart = new Cart();
 
-        printMenu();
+        printMenu(menus);
         while (true) {
             try {
                 System.out.print("메뉴 번호: ");
                 int menuNumber = scanner.nextInt();
                 if (menuNumber == 4) break;
 
-                Menu selected = selectMenu(menuNumber, americano, cafeLatte, vanillaLatte);
+                Menu selected = selectMenu(menuNumber, menus);
                 if (selected == null) {
                     System.out.println("없는 메뉴 번호입니다.");
                     continue;
@@ -42,19 +50,22 @@ public class OrderProgram {
         cart.completeOrder();
     }
 
-    static Menu selectMenu(int number, Menu first, Menu second, Menu third) {
-        if (number == 1) return first;
-        if (number == 2) return second;
-        if (number == 3) return third;
-        return null;
+    // 화면 번호에 해당하는 메뉴를 목록에서 찾아 돌려줍니다.
+    static Menu selectMenu(int number, ArrayList<Menu> menus) {
+        if (number < 1 || number > menus.size()) return null;
+        return menus.get(number - 1);
     }
 
-    static void printMenu() {
+    // 메뉴판 문장은 목록에 담긴 메뉴에서 그대로 만듭니다.
+    static void printMenu(ArrayList<Menu> menus) {
         System.out.println("[카페 스쿨 메뉴]");
         System.out.println("메뉴를 입력해 주세요.");
-        System.out.println("1. 아메리카노 3000원");
-        System.out.println("2. 카페라떼 4000원 (품절)");
-        System.out.println("3. 바닐라라떼 4500원");
+        int number = 1;
+        for (Menu menu : menus) {
+            System.out.print(number + ". ");
+            menu.printInfo();
+            number = number + 1;
+        }
         System.out.println("4. 주문 완료");
     }
 }
