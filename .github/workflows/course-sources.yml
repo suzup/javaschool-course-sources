@@ -6,22 +6,16 @@ on:
       - 'courses/java-foundations-cafe/**'
       - 'courses/java-oop-quiz/**'
       - 'courses/html-javascript-quiz/**'
-      - 'courses/react-quiz/**'
-      - 'courses/vue-quiz/**'
-      - 'courses/nextjs-todo/**'
-      - 'courses/nodejs-quiz-api/**'
-      - 'courses/typescript-intro/**'
+      - 'courses/react-fundamentals/**'
+      - 'courses/react-multi-screen/**'
       - '.github/workflows/course-sources.yml'
   pull_request:
     paths:
       - 'courses/java-foundations-cafe/**'
       - 'courses/java-oop-quiz/**'
       - 'courses/html-javascript-quiz/**'
-      - 'courses/react-quiz/**'
-      - 'courses/vue-quiz/**'
-      - 'courses/nextjs-todo/**'
-      - 'courses/nodejs-quiz-api/**'
-      - 'courses/typescript-intro/**'
+      - 'courses/react-fundamentals/**'
+      - 'courses/react-multi-screen/**'
       - '.github/workflows/course-sources.yml'
 
 jobs:
@@ -56,32 +50,16 @@ jobs:
       - name: HTML·JavaScript 최종 소스 문법 확인
         run: node --check courses/html-javascript-quiz/app.js
 
-      - name: React 퀴즈 최종 소스 빌드
-        working-directory: courses/react-quiz
+      - name: React 기초 최종 소스 검사와 빌드
+        working-directory: courses/react-fundamentals
         run: |
           npm ci
+          npm run lint
           npm run build
 
-      - name: Vue 퀴즈 최종 소스 빌드
-        working-directory: courses/vue-quiz
+      - name: 여러 화면 과정 최종 소스 검사와 빌드
+        working-directory: courses/react-multi-screen
         run: |
           npm ci
+          npm run lint
           npm run build
-
-      - name: Next.js 할 일 최종 소스 빌드
-        working-directory: courses/nextjs-todo
-        run: |
-          npm ci
-          npm run build
-
-      - name: Node.js 퀴즈 API 최종 소스 문법 확인
-        working-directory: courses/nodejs-quiz-api
-        run: |
-          npm ci
-          find src -name '*.js' -print0 | xargs -0 -n1 node --check
-
-      - name: TypeScript 입문 최종 소스 타입 확인
-        working-directory: courses/typescript-intro
-        run: |
-          npm ci
-          npm run typecheck

@@ -12,11 +12,9 @@ JavaSchool 학습 과정에서 사용하는 실행 소스를 모아 둔 저장�
 | 직접 만들고 플레이하는 Java 객체지향 퀴즈 | [`courses/java-oop-quiz`](courses/java-oop-quiz) | Java 17 |
 | Spring Boot 전에 끝내는 HTML·JavaScript | [`courses/html-javascript-quiz`](courses/html-javascript-quiz) | Chrome 또는 Edge |
 | Java 퀴즈 서버를 직접 만드는 Spring Boot 입문 | [`courses/spring-boot-quiz`](courses/spring-boot-quiz) | Java 17, Spring Boot 4.0.7, MySQL 8.0 |
-| 퀴즈 UI를 컴포넌트로 만드는 React 기초 | [`courses/react-quiz`](courses/react-quiz) | Node.js 20+, Vite |
-| 반응형 UI 만들기 — Vue.js 기초 | [`courses/vue-quiz`](courses/vue-quiz) | Node.js 20+, Vite |
-| SSR과 풀스택 앱 — Next.js 실전 | [`courses/nextjs-todo`](courses/nextjs-todo) | Node.js 20+, SQLite |
-| Express로 REST API 만들기 — Node.js 백엔드 입문 | [`courses/nodejs-quiz-api`](courses/nodejs-quiz-api) | Node.js 20+, SQLite |
-| 타입으로 버그 막기 — TypeScript 입문 | [`courses/typescript-intro`](courses/typescript-intro) | Node.js 20+ |
+| 로그인과 사용자별 기록 | [`courses/spring-boot-login`](courses/spring-boot-login) | Java 17, Spring Boot 4.0.7, MySQL 8.0 |
+| 퀴즈 UI를 컴포넌트로 만드는 React 기초 | [`courses/react-fundamentals`](courses/react-fundamentals) | Node.js 22+, React 19, Vite 7 |
+| 화면이 여러 개가 될 때의 주소와 공유 상태 | [`courses/react-multi-screen`](courses/react-multi-screen) | Node.js 22+, React 19, React Router 8, Vite 7 |
 
 ## 소스 사용 방법
 
@@ -31,3 +29,5 @@ JavaSchool 학습 과정에서 사용하는 실행 소스를 모아 둔 저장�
 - Java 과정은 Java 17 컴파일, HTML·JavaScript 과정은 JavaScript 문법 검사, Spring Boot 과정은 실제 MySQL 기반 테스트를 통과해야 합니다.
 - 새 과정도 별도 저장소를 만들지 않고 `courses/<과정 이름>`에 추가합니다.
 - 강의별 중간 체크포인트와 태그는 현재 공개하지 않습니다.
+- 폐기한 과정의 소스는 저장소에서 지웁니다. 2026-07-31에 Vue·Next.js·Node.js 과정과, 다시 쓴 과정의 옛 React·TypeScript 소스를 지웠습니다.
+- SQL, 네트워크, 배포, 변경 기록 과정은 별도 실행 소스 대신 강의 안의 명령과 시드 SQL을 사용하므로 이 저장소에 폴더를 두지 않습니다.
