@@ -8,6 +8,7 @@ on:
       - 'courses/html-javascript-quiz/**'
       - 'courses/react-fundamentals/**'
       - 'courses/react-multi-screen/**'
+      - 'courses/typescript-intro/**'
       - '.github/workflows/course-sources.yml'
   pull_request:
     paths:
@@ -16,6 +17,7 @@ on:
       - 'courses/html-javascript-quiz/**'
       - 'courses/react-fundamentals/**'
       - 'courses/react-multi-screen/**'
+      - 'courses/typescript-intro/**'
       - '.github/workflows/course-sources.yml'
 
 jobs:
@@ -63,3 +65,13 @@ jobs:
           npm ci
           npm run lint
           npm run build
+
+      - name: TypeScript 입문 최종 소스 검사
+        working-directory: courses/typescript-intro
+        run: |
+          npm ci
+          npx tsc
+          test -f dist/app.js
+          test -f dist/api-client.js
+          test -f dist/api-types.js
+          test -f dist/elements.js
