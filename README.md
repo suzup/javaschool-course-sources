@@ -16,6 +16,7 @@ JavaSchool 학습 과정에서 사용하는 실행 소스를 모아 둔 저장�
 | 퀴즈 UI를 컴포넌트로 만드는 React 기초 | [`courses/react-fundamentals`](courses/react-fundamentals) | Node.js 22+, React 19, Vite 7 |
 | 화면이 여러 개가 될 때의 주소와 공유 상태 | [`courses/react-multi-screen`](courses/react-multi-screen) | Node.js 22+, React 19, React Router 8, Vite 7 |
 | 타입으로 버그 막기 — TypeScript 입문 | [`courses/typescript-intro`](courses/typescript-intro) | Node.js 22+, TypeScript 5.9 |
+| 손으로 확인하지 않는 Java 테스트 입문 | [`courses/java-testing-fundamentals`](courses/java-testing-fundamentals) | Java 17, Spring Boot 4.0.7, MySQL 8.0 |
 
 ## 소스 사용 방법
 
