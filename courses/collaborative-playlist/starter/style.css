@@ -1,0 +1,20 @@
+* { box-sizing:border-box; }
+body { margin:0 auto; max-width:42rem; padding:0 1.25rem 3rem;
+  font-family:system-ui,-apple-system,"Apple SD Gothic Neo",sans-serif; color:#1c2026; background:#f7f8fa; }
+.top { padding:1.5rem 0 .75rem; } .top h1 { margin:0; font-size:1.4rem; }
+.hint { margin:.35rem 0 0; color:#6e7682; font-size:.92rem; }
+.panel { background:#fff; border:1px solid #cdd3dc; border-radius:12px; padding:1rem; margin-bottom:1rem; }
+.row { display:flex; gap:.5rem; flex-wrap:wrap; } .row input { flex:1 1 12rem; }
+input, button { font:inherit; padding:.45rem .6rem; border:1px solid #cdd3dc; border-radius:8px; background:#fff; }
+button { cursor:pointer; } button:hover { background:#f2f5f9; }
+.error { margin:.5rem 0 0; color:#a8382f; font-size:.9rem; }
+.tracks { display:flex; flex-direction:column; gap:.5rem; }
+.track { display:flex; align-items:center; gap:.7rem; background:#fff;
+  border:1px solid #cdd3dc; border-radius:12px; padding:.6rem .8rem; cursor:grab; }
+.track.dragging { opacity:.45; }
+.track__no { width:1.6rem; text-align:right; color:#6e7682; font-size:.9rem; }
+.track__thumb { width:5rem; height:2.9rem; object-fit:cover; border-radius:6px; background:#eef1f4; }
+.track__title { flex:1 1 auto; margin:0; font-size:.96rem; }
+.track__remove { padding:.25rem .5rem; font-size:.82rem; }
+.share { display:flex; flex-direction:column; gap:.4rem; margin-top:1rem; }
+.note { margin:0; color:#6e7682; font-size:.85rem; }

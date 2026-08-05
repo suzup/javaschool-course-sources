@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>내 지도</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>내 지도</h1>
+    <p class="hint" id="hint">지도를 눌러 가 볼 곳에 핀을 찍습니다.</p>
+  </header>
+
+  <main class="layout">
+
+    <aside class="side">
+      <div class="side__head">
+        <h2>내가 찍은 곳 <span id="count">0</span></h2>
+        <button type="button" id="nearby">가까운 순서로</button>
+      </div>
+      <ul id="list" class="list"></ul>
+      <div class="side__foot">
+        <button type="button" id="share">링크 만들기</button>
+        <input type="text" id="shareUrl" readonly placeholder="여기에 링크가 나옵니다">
+      </div>
+    </aside>
+  </main>
+
+  <!-- 카카오 JavaScript 키. 이 키는 등록한 도메인에서만 동작하므로 브라우저에 그대로 나가도 된다.
+       내 도메인에서 쓰려면 읽을거리 `카카오맵 JavaScript 키 발급받기`대로 내 키로 바꾼다. -->
+</body>
+</html>

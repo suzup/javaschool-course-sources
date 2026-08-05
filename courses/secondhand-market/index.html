@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>내가 파는 물건</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>내가 파는 물건</h1>
+    <p class="hint" id="hint">사진과 값을 넣어 물건을 올립니다.</p>
+  </header>
+
+  <section class="panel">
+    <h2>물건 올리기</h2>
+    <form id="form" class="form">
+      <input type="text" id="title" placeholder="무엇을 파나요?" required>
+      <div class="row">
+        <input type="number" id="price" placeholder="값(원)" min="0" required>
+        <select id="category">
+          <option value="digital">디지털</option>
+          <option value="furniture">가구</option>
+          <option value="clothes">옷</option>
+          <option value="book">책</option>
+          <option value="etc">기타</option>
+        </select>
+      </div>
+      <input type="file" id="photo" accept="image/*">
+      <img id="preview" class="preview" alt="" hidden>
+      <p class="error" id="error" hidden></p>
+      <button type="submit">올리기</button>
+    </form>
+  </section>
+
+  <section class="panel">
+    <h2>찾기</h2>
+    <div class="row">
+      <select id="filterCategory">
+        <option value="">카테고리 전체</option>
+        <option value="digital">디지털</option>
+        <option value="furniture">가구</option>
+        <option value="clothes">옷</option>
+        <option value="book">책</option>
+        <option value="etc">기타</option>
+      </select>
+      <input type="number" id="minPrice" placeholder="최소 값" min="0">
+      <input type="number" id="maxPrice" placeholder="최대 값" min="0">
+    </div>
+    <label class="check"><input type="checkbox" id="showSold"> 판매 완료도 보기</label>
+  </section>
+
+  <main class="grid" id="grid"></main>
+
+  <footer class="share">
+    <button type="button" id="share">내 목록 링크 만들기</button>
+    <input type="text" id="shareUrl" readonly placeholder="여기에 링크가 나옵니다">
+    <p class="note">링크에는 사진이 담기지 않습니다. 사진은 올린 사람 화면에만 있습니다.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

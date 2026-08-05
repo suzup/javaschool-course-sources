@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>내 주문 현황판</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>내 주문 현황판</h1>
+    <p class="hint" id="hint">시킨 것을 적어 두고 단계가 바뀔 때마다 눌러 옮깁니다.</p>
+  </header>
+
+  <section class="panel">
+    <form id="form" class="row">
+      <input type="text" id="title" placeholder="무엇을 시켰나요?" required>
+      <input type="text" id="place" placeholder="어디서 (가게·택배사)">
+      <button type="submit">추가</button>
+    </form>
+  </section>
+
+  <main class="list" id="list"></main>
+
+  <footer class="share">
+    <button type="button" id="share">현황판 링크 만들기</button>
+    <input type="text" id="shareUrl" readonly placeholder="여기에 링크가 나옵니다">
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

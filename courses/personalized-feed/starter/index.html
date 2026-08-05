@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>내 피드</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>내 피드</h1>
+    <p class="hint" id="hint">마음에 드는 글에 하트를 누르면 다음부터 비슷한 글이 위로 올라옵니다.</p>
+  </header>
+
+  <main class="feed" id="feed"></main>
+
+  <div class="more">
+    <button type="button" id="more">더 보기</button>
+    <p class="done" id="done" hidden>마지막 글까지 봤습니다.</p>
+  </div>
+
+  <footer class="share">
+    <button type="button" id="share">내 피드 링크 만들기</button>
+    <input type="text" id="shareUrl" readonly placeholder="여기에 링크가 나옵니다">
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

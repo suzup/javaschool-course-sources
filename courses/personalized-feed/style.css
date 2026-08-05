@@ -1,0 +1,58 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0 auto;
+  max-width: 40rem;
+  padding: 0 1.25rem 3rem;
+  font-family: system-ui, -apple-system, "Apple SD Gothic Neo", sans-serif;
+  color: #1c2026;
+  background: #f7f8fa;
+}
+
+.top { padding: 1.5rem 0 0.75rem; }
+.top h1 { margin: 0; font-size: 1.4rem; }
+.hint { margin: 0.35rem 0 0; color: #6e7682; font-size: 0.92rem; }
+
+.feed { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.card {
+  background: #fff;
+  border: 1px solid #cdd3dc;
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+}
+
+.card__head { display: flex; align-items: baseline; gap: 0.5rem; }
+.card h2 { margin: 0; font-size: 1.02rem; flex: 1 1 auto; }
+
+.badge {
+  font-size: 0.75rem;
+  padding: 0.12rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.badge--interest { background: #e3edfb; color: #2c60a8; }
+.badge--popular { background: #fdeceb; color: #a8382f; }
+
+.card__meta { margin: 0.4rem 0 0.6rem; color: #6e7682; font-size: 0.85rem; }
+.card__actions { display: flex; gap: 0.5rem; }
+
+button {
+  font: inherit;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid #cdd3dc;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+button:hover { background: #f2f5f9; }
+button[aria-pressed="true"] { background: #fdeceb; border-color: #e2b6b1; }
+
+.more { display: flex; justify-content: center; padding: 1rem 0; }
+.done { color: #6e7682; font-size: 0.9rem; margin: 0; }
+
+.share { display: flex; flex-direction: column; gap: 0.4rem; }
+input[type="text"] {
+  font: inherit; font-size: 0.85rem; padding: 0.45rem 0.6rem;
+  border: 1px solid #cdd3dc; border-radius: 8px; width: 100%;
+}

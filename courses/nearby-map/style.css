@@ -1,0 +1,132 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Apple SD Gothic Neo", sans-serif;
+  color: #1c2026;
+  background: #f7f8fa;
+}
+
+.top {
+  padding: 1rem 1.25rem 0.75rem;
+}
+
+.top h1 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.hint {
+  margin: 0.35rem 0 0;
+  color: #6e7682;
+  font-size: 0.92rem;
+}
+
+.layout {
+  display: flex;
+  gap: 1rem;
+  padding: 0 1.25rem 1.25rem;
+  align-items: stretch;
+}
+
+.map {
+  flex: 1 1 auto;
+  min-height: 30rem;
+  border-radius: 12px;
+  border: 1px solid #cdd3dc;
+  background: #eef4ef;
+}
+
+.side {
+  flex: 0 0 19rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: #fff;
+  border: 1px solid #cdd3dc;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.side__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.side__head h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #e3e7ec;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.list li:hover { background: #f2f5f9; }
+
+.list em {
+  font-style: normal;
+  color: #2c60a8;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.side__foot {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+button {
+  font: inherit;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid #cdd3dc;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+
+button:hover { background: #f2f5f9; }
+
+input[type="text"] {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid #cdd3dc;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.bubble {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.75rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .layout { flex-direction: column; }
+  .side { flex: 1 1 auto; }
+  .map { min-height: 20rem; }
+}
