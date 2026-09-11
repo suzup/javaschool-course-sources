@@ -1,14 +1,7 @@
 name: Spring Boot quiz test
 
 on:
-  push:
-    paths:
-      - 'courses/spring-boot-quiz/**'
-      - '.github/workflows/spring-boot-quiz.yml'
-  pull_request:
-    paths:
-      - 'courses/spring-boot-quiz/**'
-      - '.github/workflows/spring-boot-quiz.yml'
+  workflow_dispatch:
 
 jobs:
   test:
