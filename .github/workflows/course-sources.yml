@@ -1,24 +1,8 @@
 name: Course source check
 
+# Automatic CI is disabled to avoid consuming GitHub Actions minutes.
 on:
-  push:
-    paths:
-      - 'courses/java-foundations-cafe/**'
-      - 'courses/java-oop-quiz/**'
-      - 'courses/html-javascript-quiz/**'
-      - 'courses/react-fundamentals/**'
-      - 'courses/react-multi-screen/**'
-      - 'courses/typescript-intro/**'
-      - '.github/workflows/course-sources.yml'
-  pull_request:
-    paths:
-      - 'courses/java-foundations-cafe/**'
-      - 'courses/java-oop-quiz/**'
-      - 'courses/html-javascript-quiz/**'
-      - 'courses/react-fundamentals/**'
-      - 'courses/react-multi-screen/**'
-      - 'courses/typescript-intro/**'
-      - '.github/workflows/course-sources.yml'
+  workflow_dispatch:
 
 jobs:
   check:
