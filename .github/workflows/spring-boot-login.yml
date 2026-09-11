@@ -1,14 +1,7 @@
 name: Spring Boot login test
 
 on:
-  push:
-    paths:
-      - 'courses/spring-boot-login/**'
-      - '.github/workflows/spring-boot-login.yml'
-  pull_request:
-    paths:
-      - 'courses/spring-boot-login/**'
-      - '.github/workflows/spring-boot-login.yml'
+  workflow_dispatch:
 
 jobs:
   test:
