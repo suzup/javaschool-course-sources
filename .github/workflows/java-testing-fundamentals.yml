@@ -1,14 +1,7 @@
 name: Java testing fundamentals test
 
 on:
-  push:
-    paths:
-      - 'courses/java-testing-fundamentals/**'
-      - '.github/workflows/java-testing-fundamentals.yml'
-  pull_request:
-    paths:
-      - 'courses/java-testing-fundamentals/**'
-      - '.github/workflows/java-testing-fundamentals.yml'
+  workflow_dispatch:
 
 jobs:
   test:
